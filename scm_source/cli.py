@@ -8,7 +8,8 @@ from .api import generate_scm_source
 @click.option('--author', metavar='USER', envvar='USER', help='author of the scm-source.json (default: current $USER)')
 @click.argument('directory', nargs=-1, type=click.Path(exists=True))
 @click.option('--fail-on-modified', help="fails on locally modified code tree", is_flag=True)
-@click.option('--remote', metavar='REMOTE', default='origin', help='The URL to the main repository or the name of the respective remote (default: origin)')
+@click.option('--remote', metavar='REMOTE', default='origin',
+              help='The URL to the main repository or the name of the respective remote (default: origin)')
 def main(file, author, directory, fail_on_modified, remote):
     if not directory:
         directory = None
